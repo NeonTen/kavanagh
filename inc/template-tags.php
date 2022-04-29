@@ -18,13 +18,22 @@ function theme_logo() {
 		$custom_logo_id = get_theme_mod( 'custom_logo' );
 		$image          = wp_get_attachment_image_src( $custom_logo_id, 'full' );
 		$image_url      = $image[0];
+		$mobile_logo    = get_theme_mod( 'mobile_logo' );
+		// print_r($mobile_logo);
 
 		printf(
-			'<a href="%s" class="navbar-brand">
+			'<a href="%s" class="navbar-brand hidden md:block">
 				<img class="w-48 object-scale-down" src="%s">
 			</a>',
 			esc_url( get_home_url() ),
 			esc_url( $image_url )
+		);
+		printf(
+			'<a href="%s" class="navbar-brand block md:hidden">
+				<img class="h-12 object-scale-down" src="%s">
+			</a>',
+			esc_url( get_home_url() ),
+			esc_url( $mobile_logo )
 		);
 	} else {
 		?>
@@ -296,7 +305,7 @@ function theme_footer_html() {
 
 			</div>
 
-			<nav class="font-normal flex justify-center mt-10"><?php echo $nav->build_menu( 'footer' ); // phpcs:ignore ?></nav>
+			<nav class="font-normal hidden md:flex justify-center mt-10"><?php echo $nav->build_menu( 'footer' ); // phpcs:ignore ?></nav>
 
 		</div><!-- container end -->
 	</footer>

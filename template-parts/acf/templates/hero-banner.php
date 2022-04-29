@@ -44,7 +44,7 @@ if ( '2' === $layout ) {
 				?>
 			</div>
 
-			<div class="relative<?php echo '2' === $layout ? ' lg:col-span-2' : ''; ?>">
+			<div class="hidden md:block relative<?php echo '2' === $layout ? ' lg:col-span-2' : ''; ?>">
 				<?php
 				if ( $img ) {
 					echo '<img class="' . esc_html( $img_classes ) . '" src="' . esc_url( $img ) . '">';

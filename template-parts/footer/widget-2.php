@@ -30,33 +30,22 @@ if ( ! $heading && ! $address && 'yes' === ! $phone && 'yes' === ! $email ) {
 	<ul class="space-y-4 grid justify-center sm:justify-start">
 		<?php
 		if ( $address ) {
-			printf(
-				'<li class="flex space-x-4">
-					<span class="w-14">%s</span>
-					<span>%s</span>
-				</li>',
-				esc_html__( 'Address:', 'kavanagh' ),
-				wp_kses_post( $address )
-			);
+			echo '<li>' . wp_kses_post( $address ) . '</li>';
 		}
 		if ( 'yes' === $phone && $g_phone ) {
 			printf(
-				'<li class="flex space-x-4">
-					<span class="w-14">%s</span>
+				'<li>
 					<a href="tel:%s">%s</a>
 				</li>',
-				esc_html__( 'Phone:', 'kavanagh' ),
 				$phone_number, // phpcs:ignore
 				$g_phone // phpcs:ignore
 			);
 		}
 		if ( 'yes' === $email && $g_email ) {
 			printf(
-				'<li class="flex space-x-4">
-					<span class="w-14">%1$s</span>
-					<a href="mailto:%2$s">%2$s</a>
+				'<li>
+					<a href="mailto:%1$s">%1$s</a>
 				</li>',
-				esc_html__( 'Email:', 'kavanagh' ),
 				$g_email // phpcs:ignore
 			);
 		}

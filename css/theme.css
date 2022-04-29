@@ -1156,6 +1156,9 @@ hr {
 .h-\[400px\] {
     height: 400px;
 }
+.h-10 {
+    height: 2.5rem;
+}
 .w-full {
     width: 100%;
 }
@@ -1810,6 +1813,12 @@ hr {
     }
     .sm\:block {
         display: block;
+    }
+    .sm\:flex {
+        display: flex;
+    }
+    .sm\:hidden {
+        display: none;
     }
     .sm\:w-auto {
         width: auto;
