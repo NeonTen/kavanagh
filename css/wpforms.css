@@ -1,0 +1,10 @@
+#consultation-form .wpforms-field-container,
+#contact-form .wpforms-field-container {
+    @apply grid grid-cols-1 sm:grid-cols-2 gap-y-10 mt-10;
+}
+.wpforms-field-container .wpforms-label-hide {
+    @apply hidden;
+}
+.wpforms-field-container .wpforms-field-textarea {
+    @apply sm:col-span-2 mb-8;
+}

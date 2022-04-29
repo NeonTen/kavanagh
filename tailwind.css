@@ -1,0 +1,47 @@
+@import "css/tailwind-extra";
+@import "css/wpforms";
+@import "css/animations";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		--color-theme: #0E2F58;
+		--color-text: #55565B;
+		--color-yellow: #DACF52;
+		--color-light: #F7FBFF;
+		--color-field: #B7C1CD;
+	}
+	[type='text'],
+	[type='email'],
+	[type='url'],
+	[type='password'],
+	[type='number'],
+	[type='date'],
+	[type='datetime-local'],
+	[type='month'],
+	[type='search'],
+	[type='tel'],
+	[type='time'],
+	[type='week'],
+	[multiple],
+	textarea,
+	select {
+		@apply w-full bg-transparent text-xl font-light border-0 border-b border-field-color focus:border-theme-color focus:outline-none focus:ring-0 py-[10px];
+	}
+	hr {
+		@apply border-field-color my-12;
+	}
+}
+@layer components {
+    .button {
+		@apply inline-flex justify-center items-center bg-theme-color hover:bg-transparent hover:border hover:border-theme-color transition ease-in text-white hover:text-text-color px-6 py-3 uppercase tracking-wider;
+		min-width: 185px;
+		max-height: 56px;
+    }
+    .button.button-border {
+    	@apply text-theme-color bg-transparent hover:bg-theme-color hover:text-white border border-theme-color;
+    }
+}
